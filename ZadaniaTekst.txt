@@ -1,0 +1,204 @@
+2. Wypisz PRAWDA lub FAŁSZ obok poniższych stwierdzeń:
+Konstruktor ma taką samą nazwę, co klasa oraz nie ma typu zwrotnego lub zwraca void     FAŁSZ
+Klasa może mieć tylko jeden konstruktor     FAŁSZ
+Interfejs może mieć tylko jeden konstruktor     FAŁSZ
+Jeżeli programista zdefiniuje jakiś konstruktor, to domyślny (bezargumentowy) konstruktor nie jest dodawany     PRAWDA
+
+2. Uzupełnij poniższą instrukcję tak, aby prawidłowo porównać, czy dwa łańcuchy znaków s1 i s2 są identyczne.
+
+if(             )
+System.out.println("takie same");
+
+Rozwiązanie:
+if(s1.equals(s2))
+System.out.println("takie same");
+
+3. Uzupełnij pętle w taki sposób, aby powtarzała się dopóki łańcuchy znaków text1 i text2 są od siebie różne,
+a zakończyła się gdy są takie same.
+
+while(                    ){
+    text1=getText();
+    text2=getText();
+}
+
+Rozwiązanie:
+
+while(!text1.equals(text2)){
+    text1=getText();
+    text2=getText();
+}
+
+3. Jaki jest efekt działania następującego kodu (zakładamy, że istnieje klasa Point, posiada 
+publiczny konstruktor Point(int, int) ):
+ArrayList<Point> a = new ArrayList<Point>();
+ArrayList<Object> b; // typ Object jest zdefiniowany w języku Java i jest to klasa podstawowa po której dziedziczą 
+                     // wszystkie inne klasy. Przy próbie dodania obiektu do ArrayList<Object> b przy użyciu metody add,
+                     // można dodać tylko obiekty typu Object.
+b = 1; // błąd w tej linii, nie można przypisać liczby do listy
+b.add(new Point(10,20)); // błąd w tej linii, nie można dodać obiektu typu Point do listy ArrayList<Object>,
+                         // gdyż są to dwa różne typy obiektów
+
+5. Omów, w jaki sposób jest wykonywany kod źródłowy w Javie (podaj kolejne kroki) // do sprawdzenia w prezentacji
+ 1. Kompilacja
+ 2. Ładowanie
+ 3. Linkowanie
+ 4. Inicjalizacja
+ 5. Wykonywanie
+
+7. Kiedy wywoływana jest metoda finalize()?
+Metoda finalize() w Javie jest wywoływana wtedy, gdy obiekt nie jest już używany
+przez program i jest gotowy do usunięcia ze stosu.
+
+9. Omów różnice pomiędzy kolekcjami TreeMap and a HashMap?
+TreeMap jest implementacją mapy opartej na drzewie binarnym.
+HashMap jest implementacją mapy opartej na tablicy hashującej.
+HashMap jest szybszy od TreeMap, ale nie zapewnia gwarancji kolejności elementów.
+TreeMap jest wolniejszy od HashMap, ale zapewnia gwarancję kolejności elementów.
+
+18. Wymień przynajmniej trzy klasy reprezentujące kontenery w Javie w programowaniu graficznym.
+ 1. JPanel
+ 2. JFrame
+ 3. JTabbedPane
+
+19. Jakiej metody użyjesz, aby sprawdzić, który obiekt wygenerował zdarzenie? Zademonstruj na przykładzie.
+Aby sprawdzić, który obiekt wygenerował zdarzenie w Javie, można użyć metody getSource() 
+dostępnej w klasie java.util.EventObject.
+Przykładowo, można utworzyć klasę implementującą interfejs ActionListener i nadpisać jego metodę actionPerformed()
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MyActionListener implements ActionListener {
+    public void actionPerformed(ActionEvent event) {
+        Object source = event.getSource(); // pobranie źródła zdarzenia
+        System.out.println("Zdarzenie zostało wygenerowane przez obiekt " + source);
+    }
+}
+
+W tym przykładzie, kiedy zostanie wygenerowane zdarzenie, metoda getSource() zwróci obiekt, 
+który wygenerował zdarzenie, a następnie zostanie wyświetlona wiadomość na konsoli, która informuje o tym obiekcie.
+
+Word 3. Prawidłowa instrukcja służąca stworzeniu własnego wyjątku to?
+ public void throws MojWyjatek(...)
+ try{...} catch (new MojWyjatek(){...})
+ Wyjątek w = (Wyjatek) new Exception
+ class MojWyjatek extends Exception{...}    <-
+
+Word 4. Metoda finalize() służy do:
+ wykonywania fragmentu programu niezależnie od tego czy wystąpił wyjątek
+ wykonania sprzątania przed usunięciem obiektu    <-
+ oznaczenia, że po danej klasie nie można dziedziczyć
+ oznaczenia, że dana metoda nie może byc nadpisywana
+ usuwania obiektu względem którego jest wywoływana
+
+Word 6. Przeciążanie metod to:
+ definiowanie metod w klasie potomnej o takiej samej nazwie jak w klasie bazowej
+ definiowanie metod w klasie potomnej o takiej samej sazwie i parametrach jak w klasie bazowej
+ uzupełnienie metod przy korzystaniu z interfejsów
+ tworzenie kilku metod o takich samych nazwach i typie zwracanej wartości    <-
+
+ Word 7. Jaka wartość zmiennej sum zostanie wyświetlona przez instrukcję: System.out.print(sum)?
+ int sum = 0;
+ int i = 0;
+ while (i < 5)
+ {
+    sum = sum + i; // 0+0=0, 0+1=1, 1+2=3, 3+3=6, 6+4=10
+    i++;
+ }
+ System.out.print(i); // 5
+ System.out.print(" ");
+ System.out.print(sum); // 10
+
+// Rozwiązanie: 10
+
+Word 8. Co nie jest cechą obiektu klasy implementującej interfejs MAP?
+ można dodawać do nie go pary obiektów metodą put
+ elementy w mapie są posortowane    <-
+ klucze w mapie nie mogą się powtarzać
+ wartości w mapie wyszukujemy na podstawie wartości klucza
+ posiada metodę clear() do czyszczenia zawartości mapy
+
+ Word 9. Aby prawidłowo porównać, czy dwa łańcuchy znaków s1 i s2 są identyczne użyjemy instrukcji:
+  if(s1==s2)
+  if(s1!=s2)
+  if[s1==s]
+  if(s1.equals(s2))    <-
+
+Word 10. JVM służy do
+ kompilacji kodu źródłowego
+ uruchomienia skompilowanego programu    <-
+ kompilacja β-kodu
+ konwersji kodu źródłowego na kod natywny procesora
+
+Word 11. Które stwierdzenie jest nieprawdziwe?
+ kolekcja list posiada elementy uporządkowane
+ kolekcja Set nie dopuszcza elementów powtarzających się
+ interfejs Collection oferuje obiekt Iterator
+ do interfejsów kolekcji w języku Java należą: Set, List, Queue, Map    <- (Set, List, Queue, Deque)
+
+Word 12. Co nie wiąże się z dziedziczeniem?
+ tworzenie klasy pochodnej, której obiekty nie mogą być traktowane jak obiekty klasy bazowej    <- (mogą być traktowane jak obiekty klasy bazowej)
+ przejmowanie w klasie pochodnej z klasy bazowej wszystkich metod
+ przejmowanie w klasie pochodnej implementacji interfejsów z klasy bazowej
+ przejmowanie w klasie pochodnej wszystkich właściwości zdefiniowanych w klasie bazowej
+
+Word 13. Usuwanie obiektów następuje dzięki:
+ niejawnemu wywołaniu destruktora
+ niejawnemu wywołaniu metody finalize()
+ procesowi o niskim piorytecie usuwającemu nieużywane obiekty    <- (mechanizm zwalniania pamięci - Garbage Collector)
+ tworzeniu wielu różnych obiektów na podstawie jednej klasy
+
+Word 15. W jednym pliku Java można mieć
+ jedną klasę publiczną    <-
+ dwie klasy publiczne
+ wiele klas innych niż publiczne    <-
+ wiele klas publicznych
+
+Word 20. Które z poniższych stwierdzeń nie jest prawdziwe?
+ Klasa implementująca interfejs nie może dziedziczyć po innej klasie    <- (klasa implementująca interfejs może dziedziczyć po innej klasie)
+ Wewnątrz interfejsu można zadeklarować klasę lub interfejs    (można zadeklarować zagnieżdżoną klasę jak i zagnieżdżony interfejs)
+ Klasa może implementować wiele interfejsów
+ Interfejsów nie można dziedziczyć    <- (interfejsy mogą dziedziczyć po innych interfejsach)
+
+Word 21. Jaki typ metod posiada interfejs?
+ metody publiczne    <-
+ metody abstrakcyjne    <-
+ metody statyczne    <-
+ metody zawierające definicje
+
+Word 22. Polimorfizm umożliwia:
+ zabezpieczenie stanu obiektu przed niepowołanym dostępem
+ występowanie w jednej klasie wielu metod o takich samych nazwach
+ ukrywanie implementacji obiektu
+ używanie obiektów klas potomnych tak jak obiektu klasy bazowej    <-
+ tworzenie wielu różnych obiektów na podstawie jednej klasy    <-
+
+Word 26. Który z zarządców układu ma największe możliwości ustawiania komponentów?
+ BoxLayout
+ BorderLayout
+ Flow BoxLayout
+ GridBagLayout    <-
+
+Word 27. Który z zarządców stosuje stałe położenia ustawienia komponentu w obrębie kontenera?
+ BorderLayout    <-
+ GridBagLayout
+ SpringLayout
+ BoxLayout
+
+Word 28. Obiekty interfejsu graficznego pochodzą z pakietów:
+ java.awt.event, java.awet.graph
+ java.awt, javax.swing    <-
+ java.awt, javax.swing.graph
+ javagraph, javax.draw
+
+Word 29. Obiekt który wygenerował zdarzenie możemy otrzymać poprzez
+ event.GetActionCommand();
+ event.getSourceObject();
+ event.getSource();    <-
+ event.ToString();
+
+Word 30. Pojęcie delegat w javie w graficznym interfejsie użytkownika to:
+ połączenie widoku i kontrolera
+ połączenie modelu i widoku
+ połączenie wszystkich elementów MVC
+ "skórka" GUI zmieniająca tylko wygląd aplikacji
