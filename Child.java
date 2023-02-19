@@ -30,7 +30,7 @@ class Child extends Parent
         Child child = new Child();
         child.setName("Benny");
         System.out.println(child.getName());
-
+//Matuesz Kulec
         /*
         Parent parent = new Child();
         parent.setName("Jenny");
