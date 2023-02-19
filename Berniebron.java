@@ -27,3 +27,4 @@ public class Berniebron extends Base
                                    // gdyż liczba 10 jest przypisana do obiektów typu Berniebron
     }
 }
+//MateuszKuklec
