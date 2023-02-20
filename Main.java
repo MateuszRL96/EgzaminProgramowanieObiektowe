@@ -19,3 +19,4 @@ public class Main {
 }
 
 // Rozwiązanie: program wyświetla cyfrę 5
+//
