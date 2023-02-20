@@ -1,7 +1,7 @@
 // 4. Przeanalizuj poniższy kod. Obok utwórz dwa różne obiekty typu Color i
 // pokaż w jaki sposób można zmienić barwę dla pola r.
 public enum Color {
-    RED(255, 0, 0), GREEN(0, 255, 0), BLUE(0, 0, 255);
+    RED(255, 0, 0), GREEN(0, 255, 0), BLUE(0, 0, 255);//
 
     public int r;
     public int g;
