@@ -3,7 +3,7 @@ class Pracownik{
     String imie;
     String nazisko; //nazwisko
     double hodziny; //godziny
-    int latapracy;
+    int latapracy;// ggg
 }
 
 public class Main3 {
